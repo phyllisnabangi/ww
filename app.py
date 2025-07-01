@@ -16,7 +16,26 @@ import plotly.graph_objects as go
 #     </style>
 # """, unsafe_allow_html=True)
 
-# Narrow the gap & restyle the expander header
+# # Narrow the gap & restyle the expander header
+# st.markdown("""
+# <style>
+#   /* 1) Expander header: same font as your other H2s */
+#   .stExpander > button > div {
+#     font-family: 'Arial', sans-serif !important;
+#     font-size: 1.8rem !important; /* Increased font size */
+#   }
+#   /* 2) Remove the bottom margin under any Plotly chart/table */
+#   section[data-testid="stPlotlyChart"] {
+#     margin-bottom: 0.1rem !important; /* Reduced bottom margin */
+#   }
+#   /* 3) Also collapse margin under Streamlit DataFrames */
+#   .stDataFrame, .stTable {
+#     margin-top: 0.1rem !important; /* Reduced top margin */
+#     margin-bottom: 0.25rem !important; /* Reduced bottom margin */
+#   }
+# </style>
+# """, unsafe_allow_html=True)
+
 st.markdown("""
 <style>
   /* 1) Expander header: same font as your other H2s */
@@ -24,18 +43,19 @@ st.markdown("""
     font-family: 'Arial', sans-serif !important;
     font-size: 1.8rem !important; /* Increased font size */
   }
+
   /* 2) Remove the bottom margin under any Plotly chart/table */
   section[data-testid="stPlotlyChart"] {
-    margin-bottom: 0.1rem !important; /* Reduced bottom margin */
+    margin-bottom: 0 !important; /* ← fully collapse */
   }
-  /* 3) Also collapse margin under Streamlit DataFrames */
+
+  /* 3) Collapse margin around Streamlit DataFrames */
   .stDataFrame, .stTable {
-    margin-top: 0.1rem !important; /* Reduced top margin */
-    margin-bottom: 0.25rem !important; /* Reduced bottom margin */
+    margin-top: 0 !important;   /* ← fully collapse */
+    margin-bottom: 0.25rem !important;
   }
 </style>
 """, unsafe_allow_html=True)
-
 
 st.set_page_config(page_title="Performance Dashboard", layout="wide")
 
