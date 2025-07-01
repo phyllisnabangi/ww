@@ -5,16 +5,16 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # — Inject a little CSS to tighten up padding/margins —
-# st.markdown("""
-#     <style>
-#       /* reduce top padding of the main block-container */
-#       .block-container { padding-top: 0.5rem; }
-#       /* reduce spacing above headers */
-#       h2 { margin-top: 0.5rem; margin-bottom: 0.25rem;}
-#       /* tighten space around tables */
-#       .element-container, .stTable { margin-bottom: 0.25rem; }
-#     </style>
-# """, unsafe_allow_html=True)
+st.markdown("""
+    <style>
+      /* reduce top padding of the main block-container */
+      .block-container { padding-top: 0.5rem; }
+      /* reduce spacing above headers */
+      h2 { margin-top: 0.5rem; margin-bottom: 0.25rem;}
+      /* tighten space around tables */
+      .element-container, .stTable { margin-bottom: 0.25rem; }
+    </style>
+""", unsafe_allow_html=True)
 
 # # Narrow the gap & restyle the expander header
 # st.markdown("""
@@ -36,26 +36,6 @@ import plotly.graph_objects as go
 # </style>
 # """, unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-  /* 1) Expander header: same font as your other H2s */
-  .stExpander > button > div {
-    font-family: 'Arial', sans-serif !important;
-    font-size: 1.8rem !important; /* Increased font size */
-  }
-
-  /* 2) Remove the bottom margin under any Plotly chart/table */
-  section[data-testid="stPlotlyChart"] {
-    margin-bottom: 0 !important; /* ← fully collapse */
-  }
-
-  /* 3) Collapse margin around Streamlit DataFrames */
-  .stDataFrame, .stTable {
-    margin-top: 0 !important;   /* ← fully collapse */
-    margin-bottom: 0.25rem !important;
-  }
-</style>
-""", unsafe_allow_html=True)
 
 st.set_page_config(page_title="Performance Dashboard", layout="wide")
 
